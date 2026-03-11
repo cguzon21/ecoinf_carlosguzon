@@ -4,6 +4,7 @@ author: "Carlos Guzón"
 date: "2026-03-11"
 colorlinks: true
 urlcolor: blue
+filecolor: blue
 output:
   pdf_document:
     toc: false
@@ -33,7 +34,7 @@ counts_data <- read_csv("data/2005_2026_series/terrestrial_counts_data.csv")
 
 # FILTRAR LOCALIDADES
 
-La serie temporal completa está compuesta por un total de **63 censos** que abarcan **128 localidades** diferentes (se muestra un resumen):
+La **serie temporal completa** está compuesta por un total de **63 censos** que abarcan **128 localidades** diferentes (se muestra un resumen):
 
 ```{r echo = FALSE, results = TRUE, warning= FALSE}
 summary_local  <- matrix(unique(counts_data$`Localidad nivel 4`), 
@@ -43,7 +44,7 @@ summary_local |>
   knitr::kable()
 ```
 
-Son más que las **87 localidades** descritas en la última [metodología de censo](docs/protocolo_censo_terrestre.pdf) disponible, del año 2014. Esto se debe a que algunos años se censan parcelas extra, sobre todo ciertos arrozales que en ocasiones llegan a alcanzar grandes concentraciones de aves.
+Son más que las **87 localidades** descritas en la última [metodología de censo](docs/protocolo_censo_terrestre.pdf) disponible, del año 2014. Esto se debe a que algunos años se censan **parcelas extra**, sobre todo ciertos arrozales que en ocasiones llegan a alcanzar grandes concentraciones de aves.
 
 **Solamente consideraremos** en nuestro análisis aquellas parcelas que hayan sido muestreadas en al menos un **50% de los censos** para nuestra serie temporal:
 
@@ -113,13 +114,13 @@ species_abundance_yearly <- counts_filtered |>
 
 # GRÁFICA EJEMPLO
 
-Finalmente elaboraremos una sencilla gráfica comparativa de la **evolución de la población invernante** de 2 especies ecológicamente muy distintas: un ave limícola residente de gran tamaño, el **flamenco rosa**, y una pequeña anátida estrictamente invernante, la **cerceta común**.
+Finalmente elaboraremos una sencilla gráfica comparativa de la **evolución de la población invernante** para 2 especies ecológicamente muy distintas: un ave limícola residente de gran tamaño, el **flamenco rosa**, y una pequeña anátida estrictamente invernante, la **cerceta común**.
 
 ![](images/anas_crecca.jpg) Pareja de cercetas comunes (*Anas crecca*)
 
 ![](images/phoenicopterus_roseus.jpg) Pareja de flamencos (*Phoenicopterus roseus*)
 
-Para este ejemplo utilizaremos solamente el **valor máximo** de **abundancia invernal anual** para cada especie, una métrica habitual en estudios sobre aves invernantes como proxy de la abundancia total de cada especie en sistemas acuáticos complejos, donde hay intercambio diario de individuos entre localidades.
+En este ejemplo utilizaremos solamente el **valor máximo** de **abundancia invernal anual** para cada especie, una métrica habitual en estudios sobre aves invernantes como proxy de la abundancia total de cada especie en sistemas acuáticos complejos, donde hay intercambio diario de individuos entre localidades.
 
 ```{r echo=FALSE}
 # Calculamos un máximo invernal para cada especie (simplificado desde de Felipe 

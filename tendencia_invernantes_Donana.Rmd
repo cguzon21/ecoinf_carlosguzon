@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-Descargamos datos de censos mensuales de aves acuáticas desde el año hidrológico 2005-2006 hasta el 2025-2026, desde la web del ICTS de la Estación Biológica de Doñana ([disponible aquí](https://censos-aereos.icts.ebd.csic.es/)).
+Descargamos datos de **censos mensuales** de aves acuáticas desde el año hidrológico **2005-2006** hasta el **2025-2026**, desde la web del ICTS de la Estación Biológica de Doñana ([disponible aquí](https://censos-aereos.icts.ebd.csic.es/)).
 
 # IMPORTAR DATOS
 
@@ -33,7 +33,7 @@ counts_data <- read_csv("data/2005_2026_series/terrestrial_counts_data.csv")
 
 # FILTRAR LOCALIDADES
 
-La serie temporal completa está compuesta por un total de 63 censos que abarcan 128 localidades diferentes (se muestra un resumen):
+La serie temporal completa está compuesta por un total de **63 censos** que abarcan **128 localidades** diferentes (se muestra un resumen):
 
 ```{r echo = FALSE, results = TRUE, warning= FALSE}
 summary_local  <- matrix(unique(counts_data$`Localidad nivel 4`), 
@@ -43,9 +43,9 @@ summary_local |>
   knitr::kable()
 ```
 
-Son más que las 87 localidades descritas en la metodología de censo terrestre. Esto se debe a que algunos años se censan parcelas extra, sobre todo ciertos arrozales que en ocasiones llegan a alcanzar grandes concentraciones de aves.
+Son más que las **87 localidades** descritas en la última [metodología de censo](docs/protocolo_censo_terrestre.pdf) disponible, del año 2014. Esto se debe a que algunos años se censan parcelas extra, sobre todo ciertos arrozales que en ocasiones llegan a alcanzar grandes concentraciones de aves.
 
-Solamente consideraremos en nuestro análisis aquellas parcelas que hayan sido muestreadas en al menos un 50% de los censos para nuestra serie temporal:
+**Solamente consideraremos** en nuestro análisis aquellas parcelas que hayan sido muestreadas en al menos un **50% de los censos** para nuestra serie temporal:
 
 ```{r}
 library(tidyverse)
@@ -97,7 +97,7 @@ counts_filtered |>
 
 # TABLA DE ABUNDANCIAS POR ESPECIE Y AÑO HIDROLÓGICO
 
-Ahora creamos una tabla con las respectivas abundancias de cada especie, en cada localidad y cada año, que será la base de los análisis de tendencia que llevaremos a cabo para el trabajo final de la asignatura.
+Ahora creamos una tabla con las respectivas **abundancias de cada especie**, en cada localidad y cada año, que será la base de los análisis de tendencia que llevaremos a cabo para el trabajo final de la asignatura.
 
 ```{r}
 species_abundance_yearly <- counts_filtered |>
@@ -113,13 +113,13 @@ species_abundance_yearly <- counts_filtered |>
 
 # GRÁFICA EJEMPLO
 
-Finalmente elaboraremos una sencilla gráfica comparativa de la evolución de la población invernante de 2 especies ecológicamente muy distintas: un ave limícola residente de gran tamaño, el flamenco rosa, y una pequeña anátida estrictamente invernante, la cerceta común.
+Finalmente elaboraremos una sencilla gráfica comparativa de la **evolución de la población invernante** de 2 especies ecológicamente muy distintas: un ave limícola residente de gran tamaño, el **flamenco rosa**, y una pequeña anátida estrictamente invernante, la **cerceta común**.
 
 ![](images/anas_crecca.jpg) Pareja de cercetas comunes (*Anas crecca*)
 
 ![](images/phoenicopterus_roseus.jpg) Pareja de flamencos (*Phoenicopterus roseus*)
 
-Para este ejemplo utilizaremos solamente el valor máximo de abundancia invernal anual para cada especie, una métrica habitual en estudios sobre aves invernantes como proxy de la abundancia total de cada especie en sistemas acuáticos complejos, donde hay intercambio diario de individuos entre localidades.
+Para este ejemplo utilizaremos solamente el **valor máximo** de **abundancia invernal anual** para cada especie, una métrica habitual en estudios sobre aves invernantes como proxy de la abundancia total de cada especie en sistemas acuáticos complejos, donde hay intercambio diario de individuos entre localidades.
 
 ```{r echo=FALSE}
 # Calculamos un máximo invernal para cada especie (simplificado desde de Felipe 
@@ -157,4 +157,4 @@ max_winter_abund |>
   )
 ```
 
-\* En los análisis de tendencias para el trabajo final de la asignatura exploraremos otras métricas de abundancia, que reflejen mejor la variabilidad presente en los datos.
+\* En los análisis de tendencias para el trabajo final de la asignatura exploraremos **otras métricas de abundancia**, que reflejen mejor la **variabilidad** presente en los datos.

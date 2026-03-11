@@ -1,7 +1,7 @@
 ---
 title: '**\textbf{Tendencias poblacionales de las aves acuáticas invernantes en el Espacio Natural de Doñana}**'
 author: "Carlos Guzón"
-date: "2026-02-23"
+date: "2026-03-11"
 colorlinks: true
 urlcolor: blue
 output:
@@ -9,7 +9,6 @@ output:
     toc: false
     toc_depth: 2
     number_sections: true
-
 ---
 
 ```{r setup, include=FALSE}
@@ -115,6 +114,10 @@ species_abundance_yearly <- counts_filtered |>
 # GRÁFICA EJEMPLO
 
 Finalmente elaboraremos una sencilla gráfica comparativa de la evolución de la población invernante de 2 especies ecológicamente muy distintas: un ave limícola residente de gran tamaño, el flamenco rosa, y una pequeña anátida estrictamente invernante, la cerceta común.
+
+![](images/anas_crecca.jpg) Pareja de cercetas comunes (*Anas crecca*)
+
+![](images/phoenicopterus_roseus.jpg) Pareja de flamencos (*Phoenicopterus roseus*)
 
 Para este ejemplo utilizaremos solamente el valor máximo de abundancia invernal anual para cada especie, una métrica habitual en estudios sobre aves invernantes como proxy de la abundancia total de cada especie en sistemas acuáticos complejos, donde hay intercambio diario de individuos entre localidades.
 

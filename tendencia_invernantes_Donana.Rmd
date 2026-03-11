@@ -48,7 +48,7 @@ Son más que las **87 localidades** descritas en la última [metodología de cen
 
 **Solamente consideraremos** en nuestro análisis aquellas parcelas que hayan sido muestreadas en al menos un **50% de los censos** para nuestra serie temporal:
 
-```{r}
+```{r warning= FALSE}
 library(tidyverse)
 
 # Extraemos año y mes de cada censo a partir del código de censo:
@@ -116,9 +116,13 @@ species_abundance_yearly <- counts_filtered |>
 
 Finalmente elaboraremos una sencilla gráfica comparativa de la **evolución de la población invernante** para 2 especies ecológicamente muy distintas: un ave limícola residente de gran tamaño, el **flamenco rosa**, y una pequeña anátida estrictamente invernante, la **cerceta común**.
 
-![](images/anas_crecca.jpg) Pareja de cercetas comunes (*Anas crecca*)
+![](images/anas_crecca.jpg){width="80%"} 
 
-![](images/phoenicopterus_roseus.jpg) Pareja de flamencos (*Phoenicopterus roseus*)
+Pareja de cercetas comunes (*Anas crecca*)
+
+![](images/phoenicopterus_roseus.jpg){width="80%"} 
+
+Pareja de flamencos (*Phoenicopterus roseus*)
 
 En este ejemplo utilizaremos solamente el **valor máximo** de **abundancia invernal anual** para cada especie, una métrica habitual en estudios sobre aves invernantes como proxy de la abundancia total de cada especie en sistemas acuáticos complejos, donde hay intercambio diario de individuos entre localidades.
 
